@@ -1,6 +1,6 @@
 {
   "name": "gulp-vue-module-new",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "*.vue file compile support AMD/CMD module",
   "main": "index.js",
   "scripts": {

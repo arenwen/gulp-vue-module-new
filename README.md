@@ -83,7 +83,7 @@ $color:red;
 >
 > `<script>` tag unsupport set lang attribute, so you can't use ES6 syntax;
 >
-> `<style>` tag support set `lang="css|scss|sass\less"` attribute, and support set `href="/path/to/xxx.(css|scss|sass)"` attribute link CSS file.
+> `<style>` tag support set `lang="css|scss|sass\less"` attribute, and support set `href="/path/to/xxx.(css|scss|sass|less)"` attribute link CSS file.
 >
 > You can use `<header-comment>` tag insert the header comments
 
