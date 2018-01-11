@@ -130,7 +130,7 @@ module.exports = function(options) {
                         }else if (lang && (lang === "less")) {
                             contents.style = [];
                             less.render(style,{compress: true}, function (e, css) {
-                                 contents.style = '{content : "' + css.css + '"}';
+                                 contents.style = '{content : "' + css + '"}';
                             });
                         }
                     }
