@@ -7,7 +7,7 @@ Now, You can use [Require.js](https://github.com/requirejs/requirejs) / [Sea.js]
 ### Usage
 
 ```shell
-$ npm install gulp-vue-module --save-dev
+$ npm install gulp-vue-module-new --save-dev
 ```
 
 `Gulpfile.js` :
@@ -83,7 +83,7 @@ $color:red;
 >
 > `<script>` tag unsupport set lang attribute, so you can't use ES6 syntax;
 >
-> `<style>` tag support set `lang="css|scss|sass"` attribute, and support set `href="/path/to/xxx.(css|scss|sass)"` attribute link CSS file.
+> `<style>` tag support set `lang="css|scss|sass\less"` attribute, and support set `href="/path/to/xxx.(css|scss|sass)"` attribute link CSS file.
 >
 > You can use `<header-comment>` tag insert the header comments
 
