@@ -1,0 +1,37 @@
+{
+  "name": "gulp-vue-module-new",
+  "version": "1.0.0",
+  "description": "*.vue file compile support AMD/CMD module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arenwen/gulp-vue-module-new.git"
+  },
+  "keywords": [
+    "vue",
+    "amd",
+    "cmd",
+    "module",
+    "component",
+    "gulpplugin"
+  ],
+  "author": "arenwen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arenwen/gulp-vue-module-new/issues"
+  },
+  "homepage": "https://github.com/arenwen/gulp-vue-module-new#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "node-sass": "^3.4.2",
+    "parse5": "^2.1.5",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "less": "^2.7.3"
+  }
+}
