@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
-    require.loadCSS({content : "body{background:red}body div{background:#fff}"});
+    require.loadCSS({content : "undefined"});
 
     var a   = require("a");
     var Vue = require("vue");

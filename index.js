@@ -3,7 +3,7 @@ var path        = require("path");
 var parse5      = require('parse5');
 var gutil       = require('gulp-util');
 var through     = require("through2");
-var sass        = require("node-sass");
+//var sass        = require("node-sass");
 var PLUGIN_NAME = 'gulp-vue-module';
 var less        = require('less');
 var LOG_PREFIX  = '[' + PLUGIN_NAME + '] ';
@@ -103,31 +103,43 @@ module.exports = function(options) {
                                 contents.style = '{url : "' + href + '"}';
                             }
                         }
-                        else if (lang && (lang === "sass" || lang === "scss")) {
-                            contents.style = [];
-                            //console.log('style==', style);
+                        // else if (lang && (lang === "sass" || lang === "scss")) {
+                        //     contents.style = [];
+                        //     //console.log('style==', style);
+                        //     style.split("\n").forEach(function(line){
+                        //         if (line) contents.style.push(line);
+                        //     });
+                        //
+                        //     var result,
+                        //         sassRenderOptions = {
+                        //             outputStyle    : "compressed",
+                        //             indentedSyntax : (lang === "sass") ? true : false,
+                        //         };
+                        //
+                        //     if (href) {
+                        //         sassRenderOptions.file = href;
+                        //     } else {
+                        //         sassRenderOptions.data = contents.style.join("\n");
+                        //     }
+                        //
+                        //     result = sass.renderSync(sassRenderOptions);
+                        //     result = result.css.toString().replace("\n", "");
+                        //     if (result !== "") {
+                        //         contents.style = '{content : "' + result + '"}';
+                        //     }
+                        // }
+                        else if (lang && (lang === "less")) {
+                            console.log(style.split("\n"));
                             style.split("\n").forEach(function(line){
-                                if (line) contents.style.push(line);
+                                if(line.indexOf('@import') != -1){
+                                    console.log('这是有@import的',line);
+                                    (function(){
+                                        less.render(fs.readFileSync('/Users/renwenqing/code/gulp-vue-module-new/tests/vue/test.less').toString(),{filename: path.resolve('/Users/renwenqing/code/gulp-vue-module-new/tests/vue/test.less')},function(e,css){
+                                            console.log(css);
+                                        });
+                                    })()
+                                }
                             });
-
-                            var result,
-                                sassRenderOptions = {
-                                    outputStyle    : "compressed",
-                                    indentedSyntax : (lang === "sass") ? true : false,
-                                };
-
-                            if (href) {
-                                sassRenderOptions.file = href;
-                            } else {
-                                sassRenderOptions.data = contents.style.join("\n");
-                            }
-
-                            result = sass.renderSync(sassRenderOptions);
-                            result = result.css.toString().replace("\n", "");
-                            if (result !== "") {
-                                contents.style = '{content : "' + result + '"}';
-                            }
-                        }else if (lang && (lang === "less")) {
                             contents.style = [];
                             less.render(style,{compress: true}, function (e, css) {
                                  contents.style = '{content : "' + css + '"}';

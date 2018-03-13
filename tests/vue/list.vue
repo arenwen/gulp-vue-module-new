@@ -1,4 +1,5 @@
 <style lang="less">
+    @import 'test'
     body{
         background: red;
         div{
